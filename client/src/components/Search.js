@@ -9,8 +9,11 @@ function Search() {
     const [books, setBooks] = useState([]);
     const [searchTerm, setSearchTerm] = useState();
 
-    function saveBook(event){
-        console.log("Saving...");
+    function saveBook(id){
+        const savedBook = books.find(book => book.id === id)
+        API.saveBook(savedBook)
+            .then(res => console.log(res.data))
+            .catch(err => console.log(err));
     }
 
     function handleSearchChange(event){
@@ -24,7 +27,6 @@ function Search() {
             .then(res => {
                 setBooks(res.data.items)
                 console.log(res.data.items)
-                console.log(books);
             })
             .catch(err => console.log(err))
     }

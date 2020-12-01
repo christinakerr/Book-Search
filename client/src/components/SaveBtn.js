@@ -1,8 +1,9 @@
+
 import React from "react";
 
-function SaveBtn() {
+function SaveBtn(props) {
     return(
-        <div className="save-btn"><button className="btn btn-primary save-btn">Save</button></div>
+        <div onClick = {props.onClick} className="save-btn"><button className="btn btn-primary save-btn">Save</button></div>
     )
 }
 
