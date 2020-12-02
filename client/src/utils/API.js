@@ -11,6 +11,8 @@ const API = {
         return axios.delete("/api/books/" + id);
     },
     saveBook: function(bookData){
+        console.log("API Route:")
+        console.log(bookData)
         return axios.post("/api/books", bookData);
     }
 };

@@ -11,6 +11,7 @@ function Search() {
 
     function saveBook(bookId) {
         const savedBook = books.find(book => book.googleId === bookId)
+        console.log(books);
         API.saveBook(savedBook)
             .then(() => console.log(savedBook))
             .catch(err => console.log(err))
@@ -56,7 +57,7 @@ function Search() {
         <Jumbotron>
             {books.length ? (
                 books.map(book => {
-                    return (<Book key={book.googleId} title={book.title} author={book.author} image={book.image} summary={book.description}>
+                    return (<Book key={book.googleId} title={book.title} author={book.author} image={book.image} description={book.description}>
                         <SaveBtn onClick={() => saveBook(book.googleId)} />
                     </Book>)
                 })) : (<h3>No results to display</h3>)}
