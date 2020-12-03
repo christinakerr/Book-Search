@@ -2,7 +2,7 @@
 
 ## Deployed
 
-[Access the deployed web application here.](#)
+[Access the deployed web application here.](https://bookmarked-ck.herokuapp.com/)
 
 ## Purpose
 
